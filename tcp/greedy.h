@@ -5,20 +5,32 @@
 #ifndef COMPLEXITY_DIHT_GREEDY_H
 #define COMPLEXITY_DIHT_GREEDY_H
 
+#include "testlib.h"
+#include "../common/testcase.h"
 
-class Greedy {
-public:
-  Greedy() {
+#include <string>
 
-  }
+namespace tsp {
 
-  void generate() {
+namespace greedy {
 
-  }
+void RandomGenerator(const TestCase<std::string, int> &case_low) {
+  int n = rnd.next(1, case_low.Get("MIN_X"));
 
-private:
-  int min_x, min_y, max_x, max_y;
-};
 
+}
+
+void gen() {
+  TestCase<std::string, int> case_low;
+  case_low.Set("MIN_X", -1000);
+  case_low.Set("MAX_X", 1000);
+  case_low.Set("MIN_Y", -1000);
+  case_low.Set("MAX_Y", 1000);
+
+}
+
+}
+
+}
 
 #endif //COMPLEXITY_DIHT_GREEDY_H

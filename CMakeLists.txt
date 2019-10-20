@@ -3,4 +3,4 @@ project(complexity_diht)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(complexity_diht main.cpp tcp/greedy.h tcp/chr.h tcp/dmst.h tcp/random.h)
+add_executable(complexity_diht main.cpp tcp/greedy.h tcp/chr.h tcp/dmst.h tcp/random.h common/test.h algorithm/greedy.h common/testcase.h)
