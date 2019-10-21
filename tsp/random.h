@@ -54,17 +54,19 @@ Test RandomGenerator(const TestCase<std::string, int> &case_low) {
 void gen() {
   TestSuite suite("random_");
 
-  // test 1
-  TestCase<std::string, int> case_low;
-  case_low.Set("N", 20);
+  {
+    // test 1
+    TestCase<std::string, int> case_low;
+    case_low.Set("N", 20);
 
-  case_low.Set("MIN_X", -1000);
-  case_low.Set("MAX_X", 1000);
-  case_low.Set("MIN_Y", -1000);
-  case_low.Set("MAX_Y", 1000);
+    case_low.Set("MIN_X", -1000);
+    case_low.Set("MAX_X", 1000);
+    case_low.Set("MIN_Y", -1000);
+    case_low.Set("MAX_Y", 1000);
 
-  Test result = RandomGenerator(case_low);
-  suite.add(result);
+    Test result = RandomGenerator(case_low);
+    suite.add(result);
+  }
 
   suite.save();
 }
