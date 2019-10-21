@@ -19,7 +19,7 @@ public:
 
   template <class T>
   Test& operator<<(const T& obj) {
-    _in += obj;
+    _in += std::to_string(obj);
   }
 private:
   std::string _in;
