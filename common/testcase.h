@@ -23,7 +23,7 @@ public:
   }
 
   Value Get(const Key &key) const {
-    return _values[key];
+    return _values.at(key);
   }
 
 private:

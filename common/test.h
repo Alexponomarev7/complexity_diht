@@ -6,6 +6,7 @@
 #define COMPLEXITY_DIHT_TEST_H
 
 #include <string>
+#include <fstream>
 
 struct Test {
 public:
@@ -17,10 +18,20 @@ public:
   Test(std::string in, std::string out) : _in(in), _out(out), _is_set(true) {
   }
 
+  friend std::ostream& operator<<(std::ostream& s, const Test& test) {
+    s << test._in;
+    return s;
+  }
+
   template <class T>
   Test& operator<<(const T& obj) {
-    _in += std::to_string(obj);
+    std::stringstream ss;
+    ss << obj;
+
+    _in += ss.str();
+    return *this;
   }
+
 private:
   std::string _in;
   bool _is_set;

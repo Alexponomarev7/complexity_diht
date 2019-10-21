@@ -12,7 +12,7 @@
 
 namespace tsp {
 
-namespace greedy {
+namespace chr {
 
 Test ChrGenerator(const TestCase<std::string, int> &case_low) {
   Test test;
@@ -49,7 +49,7 @@ Test ChrGenerator(const TestCase<std::string, int> &case_low) {
 }
 
 void gen() {
-  TestSuite suite;
+  TestSuite suite("chr_");
 
   {
     // test 1
@@ -85,26 +85,6 @@ void gen() {
     // test 4
     TestCase<std::string, int> case_low;
     case_low.Set("N", 1000);
-    case_low.Set("MaxSize", 1000000);
-    case_low.Set("ExtremalValue", 1000000000);
-    Test result = ChrGenerator(case_low);
-    suite.add(result);
-  }
-
-  {
-    // test 5
-    TestCase<std::string, int> case_low;
-    case_low.Set("N", 100000);
-    case_low.Set("MaxSize", 1000);
-    case_low.Set("ExtremalValue", 1000000000);
-    Test result = ChrGenerator(case_low);
-    suite.add(result);
-  }
-
-  {
-    // test 6
-    TestCase<std::string, int> case_low;
-    case_low.Set("N", 100000);
     case_low.Set("MaxSize", 1000000);
     case_low.Set("ExtremalValue", 1000000000);
     Test result = ChrGenerator(case_low);

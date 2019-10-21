@@ -16,7 +16,7 @@
 
 namespace tsp {
 
-namespace greedy {
+namespace random {
 
 using Point = std::pair<int, int>;
 
@@ -52,7 +52,7 @@ Test RandomGenerator(const TestCase<std::string, int> &case_low) {
 }
 
 void gen() {
-  TestSuite suite;
+  TestSuite suite("random_");
 
   // test 1
   TestCase<std::string, int> case_low;
