@@ -17,6 +17,10 @@ public:
   Test(std::string in, std::string out) : _in(in), _out(out), _is_set(true) {
   }
 
+  template <class T>
+  Test& operator<<(const T& obj) {
+    _in += obj;
+  }
 private:
   std::string _in;
   bool _is_set;

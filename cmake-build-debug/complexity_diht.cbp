@@ -89,6 +89,9 @@
 		<Unit filename="/Users/lexolordan/CLionProjects/complexity_diht/common/testcase.h">
 			<Option target="complexity_diht"/>
 		</Unit>
+		<Unit filename="/Users/lexolordan/CLionProjects/complexity_diht/common/testsuite.h">
+			<Option target="complexity_diht"/>
+		</Unit>
 		<Unit filename="/Users/lexolordan/CLionProjects/complexity_diht/main.cpp">
 			<Option target="complexity_diht"/>
 		</Unit>
