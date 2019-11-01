@@ -52,6 +52,26 @@ void gen() {
     suite.add(result);
   }
 
+  {
+    // test 2
+    TestCase<std::string, double> case_low;
+    case_low.Set("N", 3000);
+    case_low.Set("K", 0.4);
+
+    Test result = BfdGenerator(case_low);
+    suite.add(result);
+  }
+
+  {
+    // test 3
+    TestCase<std::string, double> case_low;
+    case_low.Set("N", 300000);
+    case_low.Set("K", 0.4);
+
+    Test result = BfdGenerator(case_low);
+    suite.add(result);
+  }
+
   suite.save();
 }
 
