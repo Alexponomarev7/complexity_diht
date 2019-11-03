@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "tsp/testlib.h"
+#include "common/testlib.h"
 #include "tsp/random.h"
 #include "tsp/chr.h"
 #include "tsp/dmst.h"

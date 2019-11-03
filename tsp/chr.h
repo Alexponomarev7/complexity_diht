@@ -8,7 +8,7 @@
 #include "../common/test.h"
 #include "../common/testsuite.h"
 
-#include "testlib.h"
+#include "../common/testlib.h"
 
 namespace tsp {
 
