@@ -10,6 +10,7 @@ int main() {
   tsp::chr::gen();
   tsp::random::gen();
   tsp::greedy::gen();
+  tsp::dmst::gen();
 
   return 0;
 }

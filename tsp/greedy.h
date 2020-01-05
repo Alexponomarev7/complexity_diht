@@ -50,7 +50,7 @@ Test RandomGenerator(const TestCase<std::string, int> &case_low) {
     for (int j = 0; j < n; ++j) {
       test << distance(points[i], points[j]);
 
-      if (i != n - 1) {
+      if (j != n - 1) {
         test << ' ';
       }
     }
