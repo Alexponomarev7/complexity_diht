@@ -14,12 +14,13 @@
 //функция возвращает максимальную стоимость, которую можно набрать(решение задачи о рюкзаке
 //с повторениями)
 //массив dp собственно реализует динамическое программирование, описанное в статье, как K_w
-int solve_knapsack(const std::vector<int>& wts, const std::vector<int>& cost, int W)
+template <typename T>
+T solve_knapsack(const std::vector<T>& wts, const std::vector<T>& cost, T W)
 {
     size_t n = wts.size();
-    std::vector<int> dp(W + 1);
+    std::vector<T> dp(W + 1);
     dp[0] = 0;
-    for (int w = 1; w <= W; w++)
+    for (T w = 1; w <= W; w++)
     {
         dp[w] = dp[w-1];
         for (size_t i = 0; i < n; i++)
