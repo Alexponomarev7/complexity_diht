@@ -9,7 +9,7 @@
 
 #include "closure.h"
 
-#include "testlib.h"
+#include "../common/testlib.h"
 
 namespace tsp {
 

@@ -5,7 +5,7 @@
 #ifndef COMPLEXITY_DIHT_GREEDY_H
 #define COMPLEXITY_DIHT_GREEDY_H
 
-#include "testlib.h"
+#include "../common/testlib.h"
 
 #include "../common/testcase.h"
 #include "../common/test.h"
