@@ -5,6 +5,7 @@
 #include "tsp/chr.h"
 #include "tsp/dmst.h"
 #include "tsp/greedy.h"
+#include "KnapsackProblem/"
 
 int main() {
   // Register tests
