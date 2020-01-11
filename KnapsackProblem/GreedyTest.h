@@ -19,18 +19,15 @@
 #include "../common/testlib.h"
 
 template <class Key, class Value>
-Test generate_random_test(const KnapsackTestCase<Key, Value>& test_case_data) {
+Test generate_simple_greedy_test(const KnapsackTestCase<Key, Value>& test_case_data) {
     Test test;
 
-    long long n = rand() % 10000;
-    long long knapsack_capacity = rand();
-    std::vector<long long> weights(n);
-    std::vector<long long> costs(n);
+    long long n = 3;
+    long long knapsack_capacity = 6;
+    std::vector<long long> weights{4, 3, 3};
+    std::vector<long long> costs{8, 5, 5};
 
     for (int i = 0; i < n; ++i) {
-        weights[i] = rand();
-        weights[i] += weights[i] == 0 ? 1 : 0;
-
         test << weights[i];
 
         if (i != n - 1)
@@ -40,7 +37,6 @@ Test generate_random_test(const KnapsackTestCase<Key, Value>& test_case_data) {
     test << '\n';
 
     for (int i = 0; i < n; ++i) {
-        costs[i] = rand();
         test << costs[i];
 
         if (i != n - 1)
@@ -54,13 +50,11 @@ Test generate_random_test(const KnapsackTestCase<Key, Value>& test_case_data) {
 };
 
 void make_suite(){
-    TestSuite suite("knapsack_random");
+    TestSuite suite("knapsack_greedy");
 
-    for (int i = 0; i < rand() % 5 + 1; ++i) {
-        TestCase<std::string, int> test_case_data;
-        Test result = RandomGenerator(case_low);
-        suite.add(result);
-    }
+    TestCase<std::string, int> test_case_data;
+    Test result = generate_simple_greedy_test(test_case_data);
+    suite.add(result);
 
     suite.save();
 }
