@@ -11,7 +11,7 @@
 
 #include "../common/testlib.h"
 
-namespace tcp {
+namespace tsp {
 
 namespace dmst {
 
@@ -31,8 +31,10 @@ Test GenerateFlowerGr(const TestCase<std::string, int>& test_case) {
 
   for (int i = 0; i < N; ++i) {
     for (int j = 0; j < N; ++j) {
-      result << matrix[i][j] << ' ';
-      if (j == N - 1) {
+      result << matrix[i][j];
+      if (j != N - 1) {
+        result << ' ';
+      } else {
         result << '\n';
       }
     }
@@ -41,12 +43,27 @@ Test GenerateFlowerGr(const TestCase<std::string, int>& test_case) {
 }
 
 void gen() {
-  TestSuite suite;
+  TestSuite suite("dmst_");
 
-  TestCase<std::string, int> sample_case;
-  sample_case.Set("N", 50);
-  sample_case.Set("max_edge", 1000);
-  suite.add(GenerateFlowerGr(sample_case));
+  {
+    TestCase<std::string, int> sample_case;
+    sample_case.Set("N", 50);
+    sample_case.Set("max_edge", 1000);
+    suite.add(GenerateFlowerGr(sample_case));
+  }
+  {
+    TestCase<std::string, int> sample_case;
+    sample_case.Set("N", 500);
+    sample_case.Set("max_edge", 1);
+    suite.add(GenerateFlowerGr(sample_case));
+  }
+  {
+    TestCase<std::string, int> sample_case;
+    sample_case.Set("N", 500);
+    sample_case.Set("max_edge", 1000);
+    suite.add(GenerateFlowerGr(sample_case));
+  }
+
 
   suite.save();
 }

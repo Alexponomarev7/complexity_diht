@@ -7,9 +7,20 @@
 #include "tsp/greedy.h"
 
 int main() {
+  // Register tests
   tsp::chr::gen();
   tsp::random::gen();
   tsp::greedy::gen();
+  tsp::dmst::gen();
+
+  // Benchmarks
+  // ...
+
+  // Solution
+  // ...
+
+  // Execute
+  // ...
 
   return 0;
 }
